@@ -1,12 +1,14 @@
-from ascii_font import ascii_font
+from ascii_file_handling import ascii_file_handling
+from ascii_font import convert_to_ascii
 
 
 def test_ascii_font():
-    assert ascii_font
+    assert convert_to_ascii
 
 
 def test_print_letter():
-    assert ascii_font('A') == [
+    ascii_font = ascii_file_handling()
+    assert convert_to_ascii(ascii_font, 'A') == [
         '      ______',
         '     |_    _|',
         '      /    \\',

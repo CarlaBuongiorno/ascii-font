@@ -1,13 +1,8 @@
-def ascii_font(letter):
-    with open('ascii_font.txt') as ascii:
-        font_file = ascii.readlines()
-        font_file = [line.strip('\n') for line in font_file]
-        result = []
-        [result.append((item, [])) if item.isalpha() else result[-1][1].append(item) for item in font_file]
-        for l, font in result:
-            if l == letter:
+def convert_to_ascii(ascii_font, text):
+        for l, font in ascii_font:
+            if l == text:
                 return font
-        return result
+        return ascii_font
 
 #  starting on line 2
 #  make a list of each letter
